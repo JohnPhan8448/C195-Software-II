@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="962.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewController.mainSceneController">
+   <children>
+      <VBox layoutX="29.0" layoutY="232.0" prefHeight="200.0" prefWidth="324.0" />
+      <VBox layoutX="328.0" layoutY="232.0" prefHeight="200.0" prefWidth="100.0" />
+      <TableView fx:id="customerTableView" layoutX="14.0" layoutY="312.0" prefHeight="200.0" prefWidth="679.0">
+        <columns>
+            <TableColumn fx:id="customerIDColumn" prefWidth="75.0" text="Customer ID" />
+          <TableColumn fx:id="customerNameColumn" prefWidth="129.60003662109375" text="Customer Name" />
+          <TableColumn fx:id="phoneNumberColumn" prefWidth="131.199951171875" text="Phone Number" />
+            <TableColumn fx:id="addressColumn" prefWidth="109.5999755859375" text="Address" />
+            <TableColumn fx:id="stateColumn" prefWidth="75.0" text="State" />
+            <TableColumn fx:id="postalCodeColumn" prefWidth="78.4000244140625" text="Postal Code" />
+            <TableColumn fx:id="countryNameColumn" prefWidth="75.0" text="Country" />
+        </columns>
+      </TableView>
+      <Pane layoutX="147.0" layoutY="512.0" prefHeight="46.0" prefWidth="374.0">
+         <children>
+            <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#addCustomerButtonPushed" prefHeight="25.0" prefWidth="109.0" text="Add Customer" />
+            <Button layoutX="132.0" layoutY="11.0" mnemonicParsing="false" onAction="#updateCustomerButtonPushed" text="Update Customer" />
+            <Button layoutX="251.0" layoutY="11.0" mnemonicParsing="false" onAction="#deleteCustomerButtonPushed" prefHeight="25.0" prefWidth="109.0" text="Delete Customer" />
+         </children>
+      </Pane>
+      <Pane layoutX="91.0" layoutY="223.0" prefHeight="110.0" prefWidth="713.0">
+         <children>
+            <Button layoutY="43.0" mnemonicParsing="false" onAction="#newAppointmentButtonPushed" prefHeight="25.0" prefWidth="128.0" text="Add Appointment" />
+            <Button layoutX="292.0" layoutY="43.0" mnemonicParsing="false" onAction="#updateAppointmentButtonPushed" text="Update Appointment" />
+            <Button layoutX="586.0" layoutY="43.0" mnemonicParsing="false" onAction="#deleteAppointmentButtonPushed" prefHeight="25.0" prefWidth="128.0" text="Delete Appointment" />
+         </children>
+      </Pane>
+      <Button layoutX="819.0" layoutY="333.0" mnemonicParsing="false" onAction="#reportsButtonPushed" text="Reports" />
+      <Button layoutX="818.0" layoutY="385.0" mnemonicParsing="false" onAction="#closeButtonPushed" prefHeight="26.0" prefWidth="58.0" text="Close" />
+      <TabPane fx:id="appointmentsTabPane" layoutX="22.0" layoutY="23.0" prefHeight="232.0" prefWidth="922.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="allAppointments" text="All Appointments">
+               <content>
+                  <TableView fx:id="appointmentTableView" prefHeight="214.0" prefWidth="922.0">
+                    <columns>
+                      <TableColumn fx:id="appointmentIdColumn" prefWidth="45.599976539611816" text="App ID" />
+                      <TableColumn fx:id="titleColumn" prefWidth="70.39999008178711" text="Title" />
+                        <TableColumn fx:id="descriptionColumn" prefWidth="147.99998474121094" text="Description" />
+                        <TableColumn fx:id="locationColumn" prefWidth="75.0" text="Location" />
+                        <TableColumn fx:id="typeColumn" prefWidth="75.0" text="Type" />
+                        <TableColumn fx:id="startColumn" prefWidth="131.20001220703125" text="Start" />
+                        <TableColumn fx:id="endColumn" prefWidth="127.20001220703125" text="End" />
+                        <TableColumn fx:id="customerIdColumn" prefWidth="74.4000244140625" text="Customer ID" />
+                        <TableColumn fx:id="contactIdColumn" prefWidth="172.79996337890623" text="Contact ID" />
+                    </columns>
+                  </TableView>
+               </content></Tab>
+          <Tab fx:id="weeklyAppointments" text="Weekly Appointments">
+               <content>
+                  <TableView fx:id="appointmentWeeklyTableView" prefHeight="170.0" prefWidth="926.0">
+                     <columns>
+                        <TableColumn fx:id="appointmentWeeklyIdColumn" prefWidth="45.599976539611816" text="App ID" />
+                        <TableColumn fx:id="titleWeeklyColumn" prefWidth="70.39999008178711" text="Title" />
+                        <TableColumn fx:id="descriptionWeeklyColumn" prefWidth="147.99998474121094" text="Description" />
+                        <TableColumn fx:id="locationWeeklyColumn" prefWidth="75.0" text="Location" />
+                        <TableColumn fx:id="typeWeeklyColumn" prefWidth="75.0" text="Type" />
+                        <TableColumn fx:id="startWeeklyColumn" prefWidth="131.20001220703125" text="Start" />
+                        <TableColumn fx:id="endWeeklyColumn" prefWidth="127.20001220703125" text="End" />
+                        <TableColumn fx:id="customerIdWeeklyColumn" prefWidth="74.4000244140625" text="Customer ID" />
+                        <TableColumn fx:id="contactIdWeeklyColumn" prefWidth="172.79996337890623" text="Contact ID" />
+                     </columns>
+                  </TableView>
+               </content></Tab>
+            <Tab fx:id="monthlyAppointments" text="Monthly Appointments">
+               <content>
+                  <TableView fx:id="appointmentMonthTableView" prefHeight="170.0" prefWidth="926.0">
+                     <columns>
+                        <TableColumn fx:id="appointmentMonthIdColumn" prefWidth="45.599976539611816" text="App ID" />
+                        <TableColumn fx:id="titleMonthColumn" prefWidth="70.39999008178711" text="Title" />
+                        <TableColumn fx:id="descriptionMonthColumn" prefWidth="147.99998474121094" text="Description" />
+                        <TableColumn fx:id="locationMonthColumn" prefWidth="75.0" text="Location" />
+                        <TableColumn fx:id="typeMonthColumn" prefWidth="75.0" text="Type" />
+                        <TableColumn fx:id="startMonthColumn" prefWidth="131.20001220703125" text="Start" />
+                        <TableColumn fx:id="endMonthColumn" prefWidth="127.20001220703125" text="End" />
+                        <TableColumn fx:id="customerIdMonthColumn" prefWidth="74.4000244140625" text="Customer ID" />
+                        <TableColumn fx:id="contactIdMonthColumn" prefWidth="172.79996337890623" text="Contact ID" />
+                     </columns>
+                  </TableView>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
